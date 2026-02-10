@@ -157,6 +157,91 @@
             font-weight: 700;
         }
         
+        /* Metodología Section */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .methodology-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+            height: 100%;
+            transition: var(--transition);
+        }
+        
+        .methodology-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .methodology-card.pei {
+            border-left-color: var(--primary-color);
+        }
+        
+        .methodology-card.elementos {
+            border-left-color: #2ecc71;
+        }
+        
+        .methodology-card.orientadores {
+            border-left-color: #9b59b6;
+        }
+        
+        .methodology-card.insumos {
+            border-left-color: #e74c3c;
+        }
+        
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .card-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .card-title h3 {
+            color: var(--dark-color);
+            font-size: 1.3rem;
+        }
+        
+        .methodology-card.pei .card-icon {
+            color: var(--primary-color);
+        }
+        
+        .methodology-card.elementos .card-icon {
+            color: #2ecc71;
+        }
+        
+        .methodology-card.orientadores .card-icon {
+            color: #9b59b6;
+        }
+        
+        .methodology-card.insumos .card-icon {
+            color: #e74c3c;
+        }
+        
+        .methodology-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .methodology-card li {
+            margin-bottom: 8px;
+        }
+        
+        .methodology-card strong {
+            color: var(--primary-color);
+        }
+        
         /* Table Styles */
         .table-container {
             overflow-x: auto;
@@ -299,6 +384,10 @@
                 padding: 8px 10px;
                 font-size: 0.9rem;
             }
+            
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -310,7 +399,7 @@
                     <i class="fas fa-chart-line logo-icon"></i>
                     <div>
                         <h1>Taller de Elementos Estratégicos</h1>
-                        <div class="subtitle">Plan Estratégico 2025 - 2029 - Matrices Sectoriales</div>
+                        <div class="subtitle">Plan Estratégico Institucional 2025 - 2029</div>
                     </div>
                 </div>
             </div>
@@ -319,15 +408,101 @@
     
     <main class="container">
         <div class="section-nav">
-            <button class="nav-btn active" data-target="pnd">Plan Desarrollo</button>
+            <button class="nav-btn active" data-target="methodology">Metodología PEI</button>
+            <button class="nav-btn" data-target="pnd">Plan Desarrollo</button>
             <button class="nav-btn" data-target="indicators">Indicadores Sectoriales</button>
             <button class="nav-btn" data-target="budget">Presupuesto Sectorial</button>
             <button class="nav-btn" data-target="foda-externo">FODA Externo</button>
             <button class="nav-btn" data-target="foda-interno">FODA Interno</button>
         </div>
         
+        <!-- Metodología PEI -->
+        <section id="methodology" class="section active">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h2 class="section-title">Metodología del Plan Estratégico Institucional</h2>
+            </div>
+            
+            <p>El Plan Estratégico Institucional (PEI) es el instrumento de planificación que orienta la gestión de la entidad hacia el logro de resultados alineados con las prioridades nacionales y sectoriales. A continuación se presenta la metodología y elementos clave para su elaboración:</p>
+            
+            <div class="methodology-grid">
+                <!-- Objetivo PEI -->
+                <div class="methodology-card pei">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Objetivo del PEI</h3>
+                    </div>
+                    <p><strong>Lograr coherencia y racionalidad de las acciones, a través de la articulación con los demás niveles e instrumentos de planificación que conforman el Sistema Nacional Descentralizado de Planificación Participativa.</strong></p>
+                    <p>El PEI establece el marco estratégico que guía las decisiones y acciones institucionales, asegurando su alineación con las políticas públicas nacionales y sectoriales.</p>
+                </div>
+                
+                <!-- Elementos Estratégicos -->
+                <div class="methodology-card elementos">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3>Elementos Estratégicos</h3>
+                    </div>
+                    <p>Permiten establecer los logros que la entidad desea alcanzar enmarcados en su visión, misión, competencias y atribuciones, en concordancia y para dar cumplimiento a las prioridades establecidas en la planificación nacional y/o sectorial.</p>
+                    <p>Se establecen en primera instancia:</p>
+                    <ul>
+                        <li><strong>Objetivos estratégicos institucionales</strong></li>
+                        <li><strong>Estrategias</strong> para su consecución</li>
+                        <li><strong>Indicadores y metas</strong> proyectadas de acuerdo a la vigencia y/o temporalidad del Plan Institucional</li>
+                        <li><strong>Identificación/definición de los programas presupuestarios y proyectos de inversión</strong></li>
+                    </ul>
+                </div>
+                
+                <!-- Elementos Orientadores -->
+                <div class="methodology-card orientadores">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h3>Elementos Orientadores</h3>
+                    </div>
+                    <p>Componentes fundamentales que direccionan la formulación e implementación del PEI:</p>
+                    <ul>
+                        <li><strong>Objetivos Estratégicos Institucionales (OEI):</strong> Resultados específicos que la institución se compromete a alcanzar durante el período del plan.</li>
+                        <li><strong>Estrategias institucionales:</strong> Conjunto de acciones y enfoques para alcanzar los objetivos establecidos.</li>
+                        <li><strong>Indicadores y metas:</strong> Medidas cuantitativas y cualitativas para evaluar el progreso hacia los objetivos.</li>
+                        <li><strong>Presupuesto y Proyección empresarial:</strong> Asignación de recursos financieros y proyecciones económicas para la ejecución del plan.</li>
+                    </ul>
+                </div>
+                
+                <!-- Insumos para elaboración -->
+                <div class="methodology-card insumos">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Insumos para la Elaboración</h3>
+                    </div>
+                    <p>Documentos y análisis requeridos para la formulación del Plan Estratégico Institucional:</p>
+                    <ul>
+                        <li><strong>Plan Nacional de Desarrollo:</strong> Marco general de políticas públicas del gobierno nacional.</li>
+                        <li><strong>Planes sectoriales:</strong> Estrategias específicas del sector vivienda y desarrollo urbano.</li>
+                        <li><strong>Estatuto vigente:</strong> Marco legal y orgánico de la institución.</li>
+                        <li><strong>Resultado del análisis FODA:</strong> Diagnóstico interno y externo de fortalezas, oportunidades, debilidades y amenazas.</li>
+                        <li><strong>Información estadística:</strong> Datos cuantitativos sobre déficit habitacional, producción de vivienda, etc.</li>
+                        <li><strong>Proforma o cédula presupuestaria:</strong> Recursos financieros disponibles para la ejecución.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-info" style="margin-top: 30px; padding: 20px; background-color: var(--light-color); border-radius: var(--border-radius);">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;"><i class="fas fa-lightbulb"></i> Proceso de Elaboración</h3>
+                <p>El PEI se formula a través de un proceso participativo que incluye talleres de trabajo, análisis técnico y validación institucional, asegurando que los elementos estratégicos respondan a las necesidades reales del sector vivienda y desarrollo urbano, y estén alineados con las políticas nacionales.</p>
+            </div>
+        </section>
+        
         <!-- Plan Desarrollo / Sectorial -->
-        <section id="pnd" class="section active">
+        <section id="pnd" class="section">
             <div class="section-header">
                 <div class="section-icon">
                     <i class="fas fa-file-alt"></i>
@@ -908,7 +1083,1146 @@
     
     <footer>
         <div class="container">
-            <p><span class="footer-logo">Plan Estratégico 2025-2029</span> - Ministerio de Desarrollo Urbano y Vivienda</p>
+            <p><span class="footer-logo">Plan Estratégico Institucional 2025-2029</span> - Ministerio de Desarrollo Urbano y Vivienda</p>
+            <p>Taller de Elementos Estratégicos - Documento de trabajo interno</p>
+            <p><i class="far fa-calendar-alt"></i> Actualizado: Noviembre 2024</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Navegación entre secciones
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const sections = document.querySelectorAll('.section');
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Remover clase active de todos los botones y secciones
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+                    
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+                    
+                    // Mostrar la sección correspondiente
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+            
+            // Resaltar filas al pasar el mouse en tablas grandes
+            const tableRows = document.querySelectorAll('table tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('objective-row')) {
+                        this.style.backgroundColor = '#f1f5fd';
+                    }
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('objective-row') && 
+                        !this.classList.contains('indicator-subrow') && 
+                        !this.classList.contains('highlight') &&
+                        !this.classList.contains('success-cell') &&
+                        !this.classList.contains('warning-cell')) {
+                        
+                        // Restaurar colores alternados
+                        const rowIndex = Array.from(this.parentNode.children).indexOf(this);
+                        this.style.backgroundColor = rowIndex % 2 === 0 ? '#f9f9f9' : 'white';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller de Elementos Estratégicos - Plan Estratégico 2025-2029</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a3c8b;
+            --secondary-color: #2c5aa0;
+            --accent-color: #f0b400;
+            --light-color: #f5f7fc;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --info-color: #3498db;
+            --border-radius: 6px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9fafc;
+            padding-bottom: 40px;
+        }
+        
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 0;
+            border-bottom: 5px solid var(--accent-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.2rem;
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+        
+        /* Navigation */
+        .section-nav {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            padding: 10px 20px;
+            background-color: var(--light-color);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .nav-btn:hover, .nav-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Section Styles */
+        .section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        .section-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            width: 40px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        
+        /* Metodología Section */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .methodology-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+            height: 100%;
+            transition: var(--transition);
+        }
+        
+        .methodology-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .methodology-card.pei {
+            border-left-color: var(--primary-color);
+        }
+        
+        .methodology-card.elementos {
+            border-left-color: #2ecc71;
+        }
+        
+        .methodology-card.orientadores {
+            border-left-color: #9b59b6;
+        }
+        
+        .methodology-card.insumos {
+            border-left-color: #e74c3c;
+        }
+        
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .card-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .card-title h3 {
+            color: var(--dark-color);
+            font-size: 1.3rem;
+        }
+        
+        .methodology-card.pei .card-icon {
+            color: var(--primary-color);
+        }
+        
+        .methodology-card.elementos .card-icon {
+            color: #2ecc71;
+        }
+        
+        .methodology-card.orientadores .card-icon {
+            color: #9b59b6;
+        }
+        
+        .methodology-card.insumos .card-icon {
+            color: #e74c3c;
+        }
+        
+        .methodology-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .methodology-card li {
+            margin-bottom: 8px;
+        }
+        
+        .methodology-card strong {
+            color: var(--primary-color);
+        }
+        
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        table th {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+        }
+        
+        table td {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        table tr:hover {
+            background-color: #f1f5fd;
+        }
+        
+        .highlight {
+            background-color: rgba(240, 180, 0, 0.1) !important;
+            font-weight: 600;
+        }
+        
+        .success-cell {
+            background-color: rgba(46, 204, 113, 0.1) !important;
+        }
+        
+        .warning-cell {
+            background-color: rgba(243, 156, 18, 0.1) !important;
+        }
+        
+        /* Specific table styles */
+        .pnd-table th:nth-child(1) { width: 15%; }
+        .pnd-table th:nth-child(2) { width: 35%; }
+        .pnd-table th:nth-child(3) { width: 35%; }
+        .pnd-table th:nth-child(4) { width: 15%; }
+        
+        .indicators-table th:nth-child(1) { width: 20%; }
+        .indicators-table th:nth-child(2) { width: 15%; }
+        .indicators-table th:nth-child(3) { width: 35%; }
+        .indicators-table th:nth-child(4) { width: 30%; }
+        
+        .budget-table th:nth-child(1) { width: 25%; }
+        .budget-table th:nth-child(2) { width: 10%; }
+        .budget-table th:nth-child(3) { width: 25%; }
+        
+        .foda-table th:nth-child(1) { width: 15%; }
+        .foda-table th:nth-child(2) { width: 40%; }
+        .foda-table th:nth-child(3) { width: 10%; }
+        .foda-table th:nth-child(4) { width: 10%; }
+        .foda-table th:nth-child(5) { width: 10%; }
+        
+        /* FODA specific styles */
+        .opportunity {
+            color: var(--success-color);
+            font-weight: 600;
+        }
+        
+        .threat {
+            color: var(--danger-color);
+            font-weight: 600;
+        }
+        
+        .strength {
+            color: var(--success-color);
+            font-weight: 600;
+        }
+        
+        .weakness {
+            color: var(--danger-color);
+            font-weight: 600;
+        }
+        
+        /* Indicators specific */
+        .objective-row {
+            background-color: rgba(26, 60, 139, 0.1) !important;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .indicator-subrow {
+            background-color: rgba(26, 60, 139, 0.05) !important;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .footer-logo {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-nav {
+                padding: 10px;
+            }
+            
+            .nav-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            table th, table td {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <div>
+                        <h1>Taller de Elementos Estratégicos</h1>
+                        <div class="subtitle">Plan Estratégico Institucional 2025 - 2029</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="section-nav">
+            <button class="nav-btn active" data-target="methodology">Metodología PEI</button>
+            <button class="nav-btn" data-target="pnd">Plan Desarrollo</button>
+            <button class="nav-btn" data-target="indicators">Indicadores Sectoriales</button>
+            <button class="nav-btn" data-target="budget">Presupuesto Sectorial</button>
+            <button class="nav-btn" data-target="foda-externo">FODA Externo</button>
+            <button class="nav-btn" data-target="foda-interno">FODA Interno</button>
+        </div>
+        
+        <!-- Metodología PEI -->
+        <section id="methodology" class="section active">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h2 class="section-title">Metodología del Plan Estratégico Institucional</h2>
+            </div>
+            
+            <p>El Plan Estratégico Institucional (PEI) es el instrumento de planificación que orienta la gestión de la entidad hacia el logro de resultados alineados con las prioridades nacionales y sectoriales. A continuación se presenta la metodología y elementos clave para su elaboración:</p>
+            
+            <div class="methodology-grid">
+                <!-- Objetivo PEI -->
+                <div class="methodology-card pei">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Objetivo del PEI</h3>
+                    </div>
+                    <p><strong>Lograr coherencia y racionalidad de las acciones, a través de la articulación con los demás niveles e instrumentos de planificación que conforman el Sistema Nacional Descentralizado de Planificación Participativa.</strong></p>
+                    <p>El PEI establece el marco estratégico que guía las decisiones y acciones institucionales, asegurando su alineación con las políticas públicas nacionales y sectoriales.</p>
+                </div>
+                
+                <!-- Elementos Estratégicos -->
+                <div class="methodology-card elementos">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3>Elementos Estratégicos</h3>
+                    </div>
+                    <p>Permiten establecer los logros que la entidad desea alcanzar enmarcados en su visión, misión, competencias y atribuciones, en concordancia y para dar cumplimiento a las prioridades establecidas en la planificación nacional y/o sectorial.</p>
+                    <p>Se establecen en primera instancia:</p>
+                    <ul>
+                        <li><strong>Objetivos estratégicos institucionales</strong></li>
+                        <li><strong>Estrategias</strong> para su consecución</li>
+                        <li><strong>Indicadores y metas</strong> proyectadas de acuerdo a la vigencia y/o temporalidad del Plan Institucional</li>
+                        <li><strong>Identificación/definición de los programas presupuestarios y proyectos de inversión</strong></li>
+                    </ul>
+                </div>
+                
+                <!-- Elementos Orientadores -->
+                <div class="methodology-card orientadores">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h3>Elementos Orientadores</h3>
+                    </div>
+                    <p>Componentes fundamentales que direccionan la formulación e implementación del PEI:</p>
+                    <ul>
+                        <li><strong>Objetivos Estratégicos Institucionales (OEI):</strong> Resultados específicos que la institución se compromete a alcanzar durante el período del plan.</li>
+                        <li><strong>Estrategias institucionales:</strong> Conjunto de acciones y enfoques para alcanzar los objetivos establecidos.</li>
+                        <li><strong>Indicadores y metas:</strong> Medidas cuantitativas y cualitativas para evaluar el progreso hacia los objetivos.</li>
+                        <li><strong>Presupuesto y Proyección empresarial:</strong> Asignación de recursos financieros y proyecciones económicas para la ejecución del plan.</li>
+                    </ul>
+                </div>
+                
+                <!-- Insumos para elaboración -->
+                <div class="methodology-card insumos">
+                    <div class="card-title">
+                        <div class="card-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Insumos para la Elaboración</h3>
+                    </div>
+                    <p>Documentos y análisis requeridos para la formulación del Plan Estratégico Institucional:</p>
+                    <ul>
+                        <li><strong>Plan Nacional de Desarrollo:</strong> Marco general de políticas públicas del gobierno nacional.</li>
+                        <li><strong>Planes sectoriales:</strong> Estrategias específicas del sector vivienda y desarrollo urbano.</li>
+                        <li><strong>Estatuto vigente:</strong> Marco legal y orgánico de la institución.</li>
+                        <li><strong>Resultado del análisis FODA:</strong> Diagnóstico interno y externo de fortalezas, oportunidades, debilidades y amenazas.</li>
+                        <li><strong>Información estadística:</strong> Datos cuantitativos sobre déficit habitacional, producción de vivienda, etc.</li>
+                        <li><strong>Proforma o cédula presupuestaria:</strong> Recursos financieros disponibles para la ejecución.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-info" style="margin-top: 30px; padding: 20px; background-color: var(--light-color); border-radius: var(--border-radius);">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;"><i class="fas fa-lightbulb"></i> Proceso de Elaboración</h3>
+                <p>El PEI se formula a través de un proceso participativo que incluye talleres de trabajo, análisis técnico y validación institucional, asegurando que los elementos estratégicos respondan a las necesidades reales del sector vivienda y desarrollo urbano, y estén alineados con las políticas nacionales.</p>
+            </div>
+        </section>
+        
+        <!-- Plan Desarrollo / Sectorial -->
+        <section id="pnd" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h2 class="section-title">Plan Desarrollo - Plan Sectorial</h2>
+            </div>
+            
+            <div class="table-container">
+                <table class="pnd-table">
+                    <thead>
+                        <tr>
+                            <th>Eje PND</th>
+                            <th>Objetivo PND</th>
+                            <th>Política PND</th>
+                            <th>Meta PND</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Social</td>
+                            <td>1. Mejorar el bienestar social y la calidad de vida de la población, para garantizar el goce efectivo de los derechos y la reducción de las desigualdades.</td>
+                            <td>1.7 Garantizar el acceso a una vivienda adecuada, digna y promover entornos habitables y seguros, que contribuyan al fomento y desarrollo de ciudades y comunidades inclusivas, resilientes y sostenibles.</td>
+                            <td class="highlight">Reducir el déficit habitacional de vivienda de 57,43% en el 2024 a 55,11% al 2029.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Nota:</strong> Esta matriz establece la alineación del plan sectorial con el Plan Nacional de Desarrollo (PND), identificando el eje, objetivo, política y meta correspondiente.</p>
+            </div>
+        </section>
+        
+        <!-- Indicadores Sectoriales -->
+        <section id="indicators" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h2 class="section-title">Sectorial - Indicadores y Metas</h2>
+            </div>
+            
+            <div class="table-container">
+                <table class="indicators-table">
+                    <thead>
+                        <tr>
+                            <th>Obj. Sectorial</th>
+                            <th>Indicador</th>
+                            <th>Servicios públicos por competencia (información referencial)</th>
+                            <th>Meta</th>
+                            <th>Línea Base</th>
+                            <th>2025</th>
+                            <th>2026</th>
+                            <th>2027</th>
+                            <th>2028</th>
+                            <th>2029</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Objetivo 1 -->
+                        <tr class="objective-row">
+                            <td rowspan="3">Objetivo Sectorial 1: Ampliar y diversificar el acceso a soluciones habitacionales, nuevas o recuperables, mediante asistencia técnica, financiamiento y acompañamiento a los beneficiarios.</td>
+                            <td>Indicador 1: Número de soluciones habitacionales VIS entregadas para el segmento 1 incluye incentivos.</td>
+                            <td>Calificación VIS: Servicio orientado a la evaluación técnica, en estricto cumplimiento de la normativa vigente, del proceso de ejecución de viviendas y de las condiciones de habitabilidad, garantizando el desarrollo de proyectos seguros, eficientes y viables, que cumplan con los requisitos necesarios para acceder al programa de vivienda (MITI MITI).</td>
+                            <td class="highlight">Incrementar el número de viviendas de interés social entregadas para el segmento 1 e incentivos de 555 en el 2024 a 25.541 al 2029.</td>
+                            <td>266</td>
+                            <td>3.369 (3.635)</td>
+                            <td>4.175 (7.810)</td>
+                            <td>4.440 (12.250)</td>
+                            <td>4.744 (16.994)</td>
+                            <td>5.028 (22.022)</td>
+                        </tr>
+                        <tr class="indicator-subrow">
+                            <td>Indicador 2: Número de soluciones habitacionales a través de subsidio a la tasa de interés del segmento VIS y VIP.</td>
+                            <td>Registros VIP: Servicio orientado a verificar los requisitos técnicos, legales y administrativos de los proyectos habitacionales, garantizando que cumplan la normativa vigente y puedan ser incluidos dentro de los beneficios del programa de vivienda (MITI-MITI), asegurando transparencia, ordenamiento adecuado y viabilidad habitacional.<br>Calificación de beneficiarios: Servicio orientado a consolidar, verificar y validar la información del expediente del beneficiario para la suscripción de la resolución. <br>Subscripción de actas de uso y ocupación: Servicio orientado a validar el acta de uso y ocupación con la finalidad de registrar la entrega de la vivienda al beneficiario.</td>
+                            <td class="highlight">Meta: Incrementar el número de soluciones habitacionales a través de subsidio a la tasa de interés del segmento VIS y VIP de 266 en el 2024 a 22.022 al 2029.</td>
+                            <td>555</td>
+                            <td>3.804 (4.359)</td>
+                            <td>4.958 (9.317)</td>
+                            <td>5.176 (14.493)</td>
+                            <td>5.404 (19.897)</td>
+                            <td>5.644 (25.541)</td>
+                        </tr>
+                        <tr class="indicator-subrow">
+                            <td>Indicador 3: Número de soluciones habitacionales VIS entregadas a través del subsidio parcial para el segmento 2.</td>
+                            <td>Aprobación de ingreso de las instituciones financieras al programa de vivienda (MITI MITI): Servicio orientado a evaluar y aprobar el ingreso de las instituciones financieras privadas o públicas y de la economía popular y solidaria, autorizándolas a operar dentro del programa de vivienda, en cumplimiento de los requisitos y lineamientos establecidos en el reglamento.</td>
+                            <td class="highlight">Meta: Incrementar el número de soluciones habitacionales VIS entregadas a través del subsidio parcial para el segmento 2 de 28 en el 2024 a 16.716 al 2029.</td>
+                            <td>28</td>
+                            <td>337 (365)</td>
+                            <td>1.850 (2.215)</td>
+                            <td>2.070 (4.285)</td>
+                            <td>6.056 (10.341)</td>
+                            <td>6.375 (16.716)</td>
+                        </tr>
+                        
+                        <!-- Objetivo 2 -->
+                        <tr class="objective-row">
+                            <td>Objetivo Sectorial 2: Legalizar tierras rurales estatales y adjudicar títulos de propiedad de vivienda de interés social en proyectos ejecutados, para formalizar el acceso a la vivienda.</td>
+                            <td>Indicador 1: Número de incentivos para titulaciones de terrenos ocupados o destinados a vivienda entregados.</td>
+                            <td>Entrega de cupos a las Instituciones financieras: Servicio orientado a evaluar y aprobar la asignación de cupos para la constitución de fideicomisos de titularización, en conformidad con la normativa y los procedimientos establecidos. <br>-Colocación de crédito hipotecario VIS y VIP con tasa preferencial: Servicio orientado a la colocación de crédito hipotecario VIS y VIP, con tasa de interés preferencial, que forman parte del programa de vivienda (MITI MITI), en estricto cumplimiento del reglamento vigente.</td>
+                            <td class="highlight">Meta: Incrementar el número de incentivos para titulaciones de terrenos ocupados o destinados a vivienda de 2.887 en el 2024 a 31.025 al 2029.</td>
+                            <td>2.887</td>
+                            <td>6.888 (9.775)</td>
+                            <td>5.300 (15.075)</td>
+                            <td>5.300 (20.375)</td>
+                            <td>5.300 (25.675)</td>
+                            <td>5.350 (31.025)</td>
+                        </tr>
+                        
+                        <!-- Objetivo 3 -->
+                        <tr class="objective-row">
+                            <td rowspan="2">Objetivo Sectorial 3: Fortalecer la gestión integral del hábitat mediante intervenciones territoriales sostenibles e inclusivas que articulen el espacio público y equipamientos, promoviendo la resiliencia urbana.</td>
+                            <td>Indicador 1: Número de intervenciones de hábitat y espacio público implementadas.</td>
+                            <td>
+                                <p>Programa "Creamos Patrimonio" objeto la titulación, adjudicación y regularización de títulos de propiedad, para generar un patrimonio familiar.</p>
+                                <p>- Adjudicación de tierras rurales estatales ocupadas o destinadas a vivienda a favor de campesinas y campesinos.</p>
+                                <p>- Regularización de proyectos de viviendas de interés social ejecutados por el MIDUVI o escrituración de unidades de vivienda ejecutadas por la Empresa Pública Ejecutora, que no hayan sido regularizados en administraciones pasadas.</p>
+                                <p>- Titulación de otros proyectos implementados por el MIDUVI (Ley 88 - BEV-L)</p>
+                            </td>
+                            <td class="highlight">Meta: Incrementar el número de intervenciones de hábitat y espacio público, que incluyen equipamientos recreativos inclusivos y mejoramientos integrales de barrios de 0 en el 2024 a 26 al 2029.</td>
+                            <td>0</td>
+                            <td>8</td>
+                            <td>11 (19)</td>
+                            <td>5 (24)</td>
+                            <td>1 (25)</td>
+                            <td>1 (26)</td>
+                        </tr>
+                        <tr class="indicator-subrow">
+                            <td>Indicador 2: Número de mecanismos de desarrollo urbano sostenibles.</td>
+                            <td>Desarrollo e implementación de mecanismos de Desarrollo Urbano Sostenible (DUS)<br>-Asesoría para la implementación de instrumentos urbanos sostenible.<br>-Apoyo a GAD en instrumentos de gestión del suelo, regeneración urbana.<br>-Integración de criterios de sostenibilidad, resiliencia y desarrollo urbano.<br>-Articulación con programas de cooperación internacional.</td>
+                            <td class="highlight">Meta: Incrementar el número de mecanismos para el Desarrollo Urbano Sostenible (DUS), de 7 en el 2024 a 17 al 2029.</td>
+                            <td>7</td>
+                            <td>2 (9)</td>
+                            <td>2 (11)</td>
+                            <td>2 (13)</td>
+                            <td>2 (15)</td>
+                            <td>2 (17)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Nota:</strong> Los valores entre paréntesis representan acumulados. Los indicadores están alineados con los objetivos sectoriales establecidos en el plan estratégico.</p>
+            </div>
+        </section>
+        
+        <!-- Presupuesto Sectorial -->
+        <section id="budget" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h2 class="section-title">Presupuesto Sectorial</h2>
+            </div>
+            
+            <div class="table-container">
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Objetivo Sectorial</th>
+                            <th>Institución Responsable</th>
+                            <th>Proyecto Inversión / Acción Gasto Corriente</th>
+                            <th>Presupuesto 2025</th>
+                            <th>Presupuesto 2026</th>
+                            <th>Presupuesto 2027</th>
+                            <th>Presupuesto 2028</th>
+                            <th>Presupuesto 2029</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3"></th>
+                            <th>Inversión</th>
+                            <th>Inversión</th>
+                            <th>Inversión</th>
+                            <th>Inversión</th>
+                            <th>Inversión</th>
+                            <th>Inversión</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ampliar y diversificar el acceso a soluciones habitacionales, nuevas o recuperables, mediante asistencia técnica, financiamiento y acompañamiento a los beneficiarios.</td>
+                            <td>MIT</td>
+                            <td>Proyecto "Creamos Vivienda"</td>
+                            <td class="highlight">236,649,371.96</td>
+                            <td class="highlight">307,114,603.90</td>
+                            <td class="highlight">232,402,345.67</td>
+                            <td class="highlight">131,976,919.75</td>
+                            <td class="highlight">109,152,355.98</td>
+                            <td class="success-cell">1,017,295,597.26</td>
+                        </tr>
+                        <tr>
+                            <td>Legalizar tierras rurales estatales y adjudicar títulos de propiedad de vivienda de interés social en proyectos ejecutados, para formalizar el acceso a la vivienda.</td>
+                            <td>MIT</td>
+                            <td>Proyecto "Creamos Vivienda"</td>
+                            <td>1,568,829.31</td>
+                            <td>4,982,000.00</td>
+                            <td>4,982,000.00</td>
+                            <td>4,982,000.00</td>
+                            <td>5,020,540.00</td>
+                            <td class="success-cell">21,535,369.31</td>
+                        </tr>
+                        <tr>
+                            <td>Fortalecer la gestión integral del hábitat mediante intervenciones territoriales sostenibles e inclusivas que articulen el espacio público y equipamientos, promoviendo la resiliencia urbana.</td>
+                            <td>MIT</td>
+                            <td>Proyecto "Creamos Vivienda"</td>
+                            <td>1,227,380.44</td>
+                            <td>2,000,000.00</td>
+                            <td>10,000,000.00</td>
+                            <td>4,000,000.00</td>
+                            <td>-</td>
+                            <td class="success-cell">17,227,380.44</td>
+                        </tr>
+                        <tr>
+                            <td>Fortalecer la gestión integral del hábitat mediante intervenciones territoriales sostenibles e inclusivas que articulen el espacio público y equipamientos, promoviendo la resiliencia urbana.</td>
+                            <td>MIT</td>
+                            <td>Proyecto de Parques Inclusivos Integrales</td>
+                            <td>-</td>
+                            <td>2,657,838.98</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="success-cell">2,657,838.98</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Nota:</strong> Los montos presentados corresponden a la estimación del presupuesto referencial para la ejecución del plan estratégico 2025-2029. Las cantidades están expresadas en dólares estadounidenses.</p>
+            </div>
+        </section>
+        
+        <!-- FODA Externo -->
+        <section id="foda-externo" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+                <h2 class="section-title">Análisis FODA Externo</h2>
+            </div>
+            
+            <div class="table-container">
+                <table class="foda-table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Descripción</th>
+                            <th>Oportunidad</th>
+                            <th>Amenaza</th>
+                            <th>Peso</th>
+                            <th>Relevancia (1 bajo, 4 alto)</th>
+                            <th>Peso ponderado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Político</td>
+                            <td>Decreto Ejecutivo No. 412 de 04 de octubre de 2024 se modifica la denominación y objeto de la VDUEP. Se amplía el objeto social de la empresa</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>12</td>
+                            <td>4</td>
+                            <td class="highlight">48</td>
+                        </tr>
+                        <tr>
+                            <td>Sociocultural</td>
+                            <td>Entre el 2017 al 2022 el déficit habitacional incrementó 6,6 puntos porcentuales, para el 2023 en el Ecuador existe un déficit habitacional de 2.828.750 viviendas. Lo cual crea la necesidad de construcción de viviendas.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>10</td>
+                            <td>4</td>
+                            <td class="highlight">40</td>
+                        </tr>
+                        <tr>
+                            <td>Legal</td>
+                            <td>La Ley Orgánica para la Regulación de los Créditos para la Vivienda y Vehículos, expedida en el 2012 y en vigor en la actualidad, se encarga de regular los créditos de vivienda y vehículos contraídos por personas naturales. La Quinta Disposición de la ley citada obliga a las instituciones financieras a otorgar un porcentaje anual mínimo destinado a operaciones hipotecarias con ello es deseable que los créditos hipotecarios y personas naturales beneficiarias se incrementen.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>9</td>
+                            <td>3</td>
+                            <td class="highlight">27</td>
+                        </tr>
+                        <tr>
+                            <td>Económico</td>
+                            <td>Acorde al Fondo Monetario Internacional se prevé que la economía mundial se desacelere, este suceso se le puede atribuir, entre otros factores, a las elevadas tasas de inflación que fueron consecuencia de las medidas fiscales y monetarias expansionistas para la recuperación de la economía en años postpandemia.</td>
+                            <td></td>
+                            <td class="threat">X</td>
+                            <td>8</td>
+                            <td>3</td>
+                            <td class="highlight">24</td>
+                        </tr>
+                        <tr>
+                            <td>Legal</td>
+                            <td>El sector de la construcción en la pandemia del COVID – 19 sufrió una fuerte recesión, entre las medidas para reactivar el sector el Gobierno ecuatoriano optó por bajar las tasas de intereses activas. A la fecha, acorde al artículo 1 de la Sección XI de la Codificación de Resoluciones Monetarias, Financieras, de Valores y Seguros las tasas de interés activas serán establecidas por la Junta de Política y Regulación Financiera, para el caso del Crédito Inmobiliario se establece en 10,40% y Crédito de Vivienda de Interés Social y Público se fija en 4,99%.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td class="highlight">18</td>
+                        </tr>
+                        <tr>
+                            <td>Legal</td>
+                            <td>A partir del 20 de diciembre de 2023 el Estado promulga, reforma y aplica la Ley de Eficiencia Económica y Generación de Empleo y su Reglamento General de aplicación. Para el sector de la construcción se aplican diversas deducciones fiscales, principalmente, en la devolución al IVA y deducciones para el cálculo de la base imponible.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td class="highlight">18</td>
+                        </tr>
+                        <tr>
+                            <td>Económico</td>
+                            <td>La tasa de interés activa del sector inmobiliario a partir del primer trimestre de 2022 hasta el primer trimestre de 2024 tiende a decrecer, alcanzando el 11,25%.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td class="highlight">18</td>
+                        </tr>
+                        <tr>
+                            <td>Tecnológico</td>
+                            <td>Actualmente, ciertas instituciones de educación superior públicas cuentan con laboratorios vinculados con ingeniería civil y arquitectura, las cuales colaboran en investigación, desarrollo y pruebas relacionadas con la construcción y el diseño de estructuras.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td class="highlight">18</td>
+                        </tr>
+                        <tr>
+                            <td>Político</td>
+                            <td>Decreto Ejecutivo No. 1 de 23 de noviembre de 2023, el Sr. Daniel Noboa Azín asume la Presidencia Constitucional de la República del Ecuador.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Económico</td>
+                            <td>Supuestos macroeconómicos que sustentan la Proforma Presupuestaria del 2024: PIB de 121.710 millones de USD, crecimiento real del PIB de 0,80% inflación anual promedio 2,07%, volumen de producción de barriles de petróleo 156 millones con un precio de 66,1 (USD/barril).</td>
+                            <td></td>
+                            <td class="threat">X</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Político</td>
+                            <td>Resolución Nro. 003-2024-CNP, de 16 de febrero de 2024 se aprobó el "Plan de Desarrollo para el Nuevo Ecuador 2024 – 2025."</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Político</td>
+                            <td>Decreto Ejecutivo No. 138 de 26 de enero de 2024, se designa al Sr. Humberto Aparicio Plaza Arguello como delegado permanente del Presidente de la República ante el directorio de la CIEP.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Sociocultural</td>
+                            <td>Para el 2024 se prevé que en el territorio ecuatoriano habiten 18.494.957 personas, donde el 68,17% se concentra en zonas urbanas y el 31,83% en zonas rurales.</td>
+                            <td class="opportunity">X</td>
+                            <td></td>
+                            <td>8</td>
+                            <td>1</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Sociocultural</td>
+                            <td>La tasa de desempleo a nivel nacional entre enero de 2022 a enero de 2024 en promedio fue de 3,90%. Al comparar enero de 2024 respecto a enero de 2023 representa un leve aumento de 0,05 puntos porcentuales, para enero 2024 la tasa de desempleo se situó en 3,92%.</td>
+                            <td></td>
+                            <td class="threat">X</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Sociocultural</td>
+                            <td>Paralelamente, la tasa de empleo adecuado en promedio entre enero de 2022 a enero de 2024 fue de 34,46%. Al analizar la variación entre enero 2024 respecto a enero de 2023 se observa que experimentó una disminución de 0,03 puntos porcentuales, situándose en 2024 en 34,75%</td>
+                            <td></td>
+                            <td class="threat">X</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Sociocultural</td>
+                            <td>En contraste el subempleo incrementa 0,06 puntos porcentuales en enero de 2024 versus enero de 2023, en enero de 2024 alcanzó 20,24%.</td>
+                            <td></td>
+                            <td class="threat">X</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Económico</td>
+                            <td>La economía ecuatoriana todavía se encuentra en recuperación de las secuelas de la pandemia, el PIB real entre 2021 a 2024 (proyección) presenta en promedio un crecimiento del 4%, mientras que el sector de la construcción tiene un crecimiento en promedio del 5%.</td>
+                            <td></td>
+                            <td class="threat">X</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Análisis:</strong> El FODA externo identifica principalmente oportunidades en los ámbitos político, legal y sociocultural, con factores de alto peso ponderado como la modificación del objeto social de la VDUEP (48) y el déficit habitacional (40). Las principales amenazas se relacionan con factores económicos globales y nacionales.</p>
+            </div>
+        </section>
+        
+        <!-- FODA Interno -->
+        <section id="foda-interno" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-internal-link"></i>
+                </div>
+                <h2 class="section-title">Análisis FODA Interno</h2>
+            </div>
+            
+            <div class="table-container">
+                <table class="foda-table">
+                    <thead>
+                        <tr>
+                            <th>Perspectiva</th>
+                            <th>Descripción</th>
+                            <th>Fortaleza</th>
+                            <th>Debilidad</th>
+                            <th>Peso</th>
+                            <th>Relevancia (1 bajo, 4 alto)</th>
+                            <th>Peso ponderado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tecnología</td>
+                            <td>La empresa carece de un sistema informático que consolide distintas fuentes de información a nivel operativo y financiero.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>11</td>
+                            <td>4</td>
+                            <td class="highlight">44</td>
+                        </tr>
+                        <tr>
+                            <td>Estructura Orgánica</td>
+                            <td>La estructura orgánica actual no logra solventar los procesos institucionales para cumplir con el objeto de creación y realidad actual de la empresa pública.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>11</td>
+                            <td>4</td>
+                            <td class="highlight">44</td>
+                        </tr>
+                        <tr>
+                            <td>Estratégica</td>
+                            <td>Al ser una empresa pública cuenta con mayor capacidad asociativa público - privada.</td>
+                            <td class="strength">X</td>
+                            <td></td>
+                            <td>9</td>
+                            <td>4</td>
+                            <td class="highlight">36</td>
+                        </tr>
+                        <tr>
+                            <td>Procesos</td>
+                            <td>La empresa gestiona parcialmente la mejora e innovación de procesos, pero no cuenta con sistemas transaccionales que apalancan la automatización y control de los procesos. Adicional, no cuenta con un sistema de gestión de la calidad.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>8</td>
+                            <td>4</td>
+                            <td class="highlight">32</td>
+                        </tr>
+                        <tr>
+                            <td>Estratégica</td>
+                            <td>Experiencia en la ejecución de proyectos de construcción de viviendas de interés social.</td>
+                            <td class="strength">X</td>
+                            <td></td>
+                            <td>7</td>
+                            <td>4</td>
+                            <td class="highlight">28</td>
+                        </tr>
+                        <tr>
+                            <td>Planificación</td>
+                            <td>Carece de indicadores clave de desempeño (KPI) dificulta la identificación temprana de problemas.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>7</td>
+                            <td>4</td>
+                            <td class="highlight">28</td>
+                        </tr>
+                        <tr>
+                            <td>Estratégica</td>
+                            <td>La empresa pública se extiende en todo el territorio ecuatoriano.</td>
+                            <td class="strength">X</td>
+                            <td></td>
+                            <td>8</td>
+                            <td>3</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>Procesos</td>
+                            <td>Existe vulnerabilidad en la integridad de la información contenida en la matriz Técnico - Financiera, así como en el repositorio documental de los expedientes integrales de proyectos</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>7</td>
+                            <td>3</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Planificación</td>
+                            <td>Existen problemas en el seguimiento a los compromisos generados con los distintos actores responsables por la ejecución de los proyectos ocasionando prórrogas y suspensiones injustificadas.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>7</td>
+                            <td>3</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Procesos</td>
+                            <td>En el ámbito presupuestario, la empresa no dispone de un Manual de Políticas y Procedimientos que le permita establecer lineamientos claros y específicos en cuanto al control y seguimiento de la ejecución de los proyectos de la empresa, no existe un procedimiento que enlace la gestión entre la gerencia de proyecto y la gerencia financiera.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>7</td>
+                            <td>3</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Procesos</td>
+                            <td>Se evidencia causas judiciales a favor de la empresa pública relacionadas a asentamientos irregulares que afectan la ejecución de algunos proyectos.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>Estratégica</td>
+                            <td>Composición del Directorio de VDUEP facilita las coordinaciones a nivel del gobierno para la toma de decisiones.</td>
+                            <td class="strength">X</td>
+                            <td></td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Procesos</td>
+                            <td>Si bien la empresa dispone de los Marcos de Referencia para desarrollar y formalizar los distintos tipos de Convenios que ejecuta, además de procedimientos para el desarrollo de proyectos, es necesario actualizar los mismo a fin de que esta documentación le permita establecer lineamientos claros y específicos en cuanto al inicio, ejecución, control y seguimiento de los proyectos en todas sus etapas.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>6</td>
+                            <td>2</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Planificación</td>
+                            <td>La empresa ha desarrollado parcialmente, lineamientos, metodologías e instrumentos para el Control, Seguimiento y Evaluación del Plan General de Negocios, Expansión e Inversión, a nivel de objetivos, metas e Indicadores, alineados a la planificación estratégica aprobada.</td>
+                            <td></td>
+                            <td class="weakness">X</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Análisis:</strong> El FODA interno identifica debilidades significativas en tecnología, estructura organizacional y procesos, con altos pesos ponderados (44, 44, 32 respectivamente). Las principales fortalezas están en la capacidad asociativa público-privada (36) y la experiencia en proyectos de vivienda de interés social (28).</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p><span class="footer-logo">Plan Estratégico Institucional 2025-2029</span> - Ministerio de Desarrollo Urbano y Vivienda</p>
             <p>Taller de Elementos Estratégicos - Documento de trabajo interno</p>
             <p><i class="far fa-calendar-alt"></i> Actualizado: Noviembre 2024</p>
         </div>
