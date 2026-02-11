@@ -324,6 +324,21 @@
             background-color: rgba(243, 156, 18, 0.1) !important;
         }
         
+        /* Nuevo estilo para tabla de objetivos sectoriales */
+        .objectives-table th:nth-child(1) { width: 40%; }
+        .objectives-table th:nth-child(2) { width: 30%; }
+        .objectives-table th:nth-child(3) { width: 30%; }
+        
+        .objective-header-row {
+            background-color: rgba(26, 60, 139, 0.15) !important;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .indicator-row {
+            background-color: rgba(26, 60, 139, 0.05) !important;
+        }
+        
         /* Specific table styles */
         .pnd-table th:nth-child(1) { width: 15%; }
         .pnd-table th:nth-child(2) { width: 35%; }
@@ -442,6 +457,7 @@
         <div class="section-nav">
             <button class="nav-btn active" data-target="methodology">Metodología PEI</button>
             <button class="nav-btn" data-target="pnd">Plan Desarrollo</button>
+            <button class="nav-btn" data-target="objectives">Objetivos Sectoriales</button>
             <button class="nav-btn" data-target="indicators">Indicadores Sectoriales</button>
             <button class="nav-btn" data-target="budget">Presupuesto Sectorial</button>
             <button class="nav-btn" data-target="foda-externo">FODA Externo</button>
@@ -593,6 +609,71 @@
             
             <div class="section-info">
                 <p><strong>Nota:</strong> Esta matriz establece la alineación del plan sectorial con el Plan Nacional de Desarrollo (PND), identificando el eje, objetivo, política y meta correspondiente.</p>
+            </div>
+        </section>
+        
+        <!-- Objetivos Sectoriales (Nueva Sección) -->
+        <section id="objectives" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h2 class="section-title">Objetivos e Indicadores Sectoriales</h2>
+            </div>
+            
+            <p>Resumen de los objetivos sectoriales, indicadores y metas establecidas en el Plan Estratégico Institucional 2025-2029:</p>
+            
+            <div class="table-container">
+                <table class="objectives-table">
+                    <thead>
+                        <tr>
+                            <th>Objetivo Sectorial</th>
+                            <th>Indicador</th>
+                            <th>Meta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Objetivo 1 -->
+                        <tr class="objective-header-row">
+                            <td>Objetivo Sectorial 1: Ampliar y diversificar el acceso a soluciones habitacionales, nuevas o recuperables, mediante asistencia técnica, financiamiento y acompañamiento a los beneficiarios.</td>
+                            <td>Indicador 1: Número de soluciones habitacionales VIS entregadas para el segmento 1 incluye incentivos.</td>
+                            <td class="highlight">Incrementar el número de viviendas de interés social entregadas para el segmento 1 e incentivos de 555 en el 2024 a 25.541 al 2029.</td>
+                        </tr>
+                        <tr class="indicator-row">
+                            <td></td>
+                            <td>Indicador 2: Número de soluciones habitacionales a través de subsidio a la tasa de interés del segmento VIS y VIP.</td>
+                            <td>Meta: Incrementar el número de soluciones habitacionales a través de subsidio a la tasa de interés del segmento VIS y VIP de 266 en el 2024 a 22.022 al 2029.</td>
+                        </tr>
+                        <tr class="indicator-row">
+                            <td></td>
+                            <td>Indicador 3: Número de soluciones habitacionales VIS entregadas a través del subsidio parcial para el segmento 2.</td>
+                            <td>Meta: Incrementar el número de soluciones habitacionales VIS entregadas a través del subsidio parcial para el segmento 2 de 28 en el 2024 a 16.716 al 2029.</td>
+                        </tr>
+                        
+                        <!-- Objetivo 2 -->
+                        <tr class="objective-header-row">
+                            <td>Objetivo Sectorial 2: Legalizar tierras rurales estatales y adjudicar títulos de propiedad de vivienda de interés social en proyectos ejecutados, para formalizar el acceso a la vivienda.</td>
+                            <td>Indicador 1: Número de incentivos para titulaciones de terrenos ocupados o destinados a vivienda entregados.</td>
+                            <td class="highlight">Meta: Incrementar el número de incentivos para titulaciones de terrenos ocupados o destinados a vivienda de 2.887 en el 2024 a 31.025 al 2029.</td>
+                        </tr>
+                        
+                        <!-- Objetivo 3 -->
+                        <tr class="objective-header-row">
+                            <td>Objetivo Sectorial 3: Fortalecer la gestión integral del hábitat mediante intervenciones territoriales sostenibles e inclusivas que articulen el espacio público y equipamientos, promoviendo la resiliencia urbana.</td>
+                            <td>Indicador 1: Número de intervenciones de hábitat y espacio público implementadas.</td>
+                            <td class="highlight">Meta: Incrementar el número de intervenciones de hábitat y espacio público, que incluyen equipamientos recreativos inclusivos y mejoramientos integrales de barrios de 0 en el 2024 a 26 al 2029.</td>
+                        </tr>
+                        <tr class="indicator-row">
+                            <td></td>
+                            <td>Indicador 2: Número de mecanismos de desarrollo urbano sostenibles.</td>
+                            <td>Meta: Incrementar el número de mecanismos para el Desarrollo Urbano Sostenible (DUS), de 7 en el 2024 a 17 al 2029.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Nota:</strong> Esta tabla presenta de forma resumida los objetivos sectoriales, sus indicadores y las metas establecidas para el período 2025-2029. Para información detallada sobre los valores anuales y acumulados, consulte la sección "Indicadores Sectoriales".</p>
             </div>
         </section>
         
@@ -1175,14 +1256,16 @@
             const tableRows = document.querySelectorAll('table tbody tr');
             tableRows.forEach(row => {
                 row.addEventListener('mouseenter', function() {
-                    if (!this.classList.contains('objective-row')) {
+                    if (!this.classList.contains('objective-row') && !this.classList.contains('objective-header-row')) {
                         this.style.backgroundColor = '#f1f5fd';
                     }
                 });
                 
                 row.addEventListener('mouseleave', function() {
                     if (!this.classList.contains('objective-row') && 
+                        !this.classList.contains('objective-header-row') && 
                         !this.classList.contains('indicator-subrow') && 
+                        !this.classList.contains('indicator-row') &&
                         !this.classList.contains('highlight') &&
                         !this.classList.contains('success-cell') &&
                         !this.classList.contains('warning-cell')) {
