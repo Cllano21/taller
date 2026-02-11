@@ -393,8 +393,8 @@
         }
         
         /* Estilo para tabla de objetivos sectoriales y estratégicos */
-        .strategic-objectives-table th:nth-child(1) { width: 50%; }
-        .strategic-objectives-table th:nth-child(2) { width: 50%; }
+        .sector-vs-oei-table th:nth-child(1) { width: 50%; }
+        .sector-vs-oei-table th:nth-child(2) { width: 50%; }
         
         .sectorial-objective-row {
             background-color: rgba(46, 204, 113, 0.1) !important;
@@ -409,6 +409,60 @@
             width: 25px;
             font-weight: bold;
             margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* Estilo para elementos orientadores vigentes */
+        .orientadores-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .orientadores-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .orientadores-card h3 i {
+            margin-right: 12px;
+            color: var(--accent-color);
+        }
+        
+        .orientadores-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .values-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .values-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .values-list li:before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .values-list strong {
             color: var(--primary-color);
         }
         
@@ -538,20 +592,23 @@
     </header>
     
     <main class="container">
+        <!-- Navegación reorganizada según enumeración solicitada -->
         <div class="section-nav">
-            <button class="nav-btn active" data-target="methodology">Metodología PEI</button>
-            <button class="nav-btn" data-target="pnd">Plan Desarrollo</button>
-            <button class="nav-btn" data-target="objectives">Objetivos Sectoriales</button>
-            <button class="nav-btn" data-target="strategic-objectives">Objetivos Estratégicos</button>
-            <button class="nav-btn" data-target="strategies">Objetivos y Estrategias</button>
-            <button class="nav-btn" data-target="current-indicators">Indicadores Vigentes</button>
+            <button class="nav-btn active" data-target="methodology">1. Metodología PEI</button>
+            <button class="nav-btn" data-target="pnd">2. Plan Desarrollo</button>
+            <button class="nav-btn" data-target="objectives">3. Objetivos sectoriales</button>
+            <button class="nav-btn" data-target="sector-vs-oei">4. Obj sector vs OEI vigente</button>
+            <button class="nav-btn" data-target="oei-strategies">6. OEI Estrategias</button>
+            <button class="nav-btn" data-target="current-indicators">7. Indicadores Vigentes</button>
+            <button class="nav-btn" data-target="orientadores-vigentes">8. Elementos orientadores vigentes</button>
+            <!-- Secciones adicionales -->
             <button class="nav-btn" data-target="indicators">Indicadores Sectoriales</button>
             <button class="nav-btn" data-target="budget">Presupuesto Sectorial</button>
             <button class="nav-btn" data-target="foda-externo">FODA Externo</button>
             <button class="nav-btn" data-target="foda-interno">FODA Interno</button>
         </div>
         
-        <!-- Metodología PEI -->
+        <!-- 1. Metodología PEI -->
         <section id="methodology" class="section active">
             <div class="section-header">
                 <div class="section-icon">
@@ -664,7 +721,7 @@
             </div>
         </section>
         
-        <!-- Plan Desarrollo / Sectorial -->
+        <!-- 2. Plan Desarrollo / Sectorial -->
         <section id="pnd" class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -699,7 +756,7 @@
             </div>
         </section>
         
-        <!-- Objetivos Sectoriales -->
+        <!-- 3. Objetivos Sectoriales -->
         <section id="objectives" class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -764,19 +821,19 @@
             </div>
         </section>
         
-        <!-- Objetivos Sectoriales y Estratégicos Vigentes -->
-        <section id="strategic-objectives" class="section">
+        <!-- 4. Obj sector vs OEI vigente (antes: Objetivos Sectoriales y Estratégicos Vigentes) -->
+        <section id="sector-vs-oei" class="section">
             <div class="section-header">
                 <div class="section-icon">
                     <i class="fas fa-crosshairs"></i>
                 </div>
-                <h2 class="section-title">Objetivos Sectoriales y Estratégicos Vigentes</h2>
+                <h2 class="section-title">Objetivos Sectoriales vs. OEI Vigentes</h2>
             </div>
             
             <p>Relación entre los objetivos sectoriales y los objetivos estratégicos vigentes de la Empresa Pública de Vivienda y Desarrollo Urbano EP:</p>
             
             <div class="table-container">
-                <table class="strategic-objectives-table">
+                <table class="sector-vs-oei-table">
                     <thead>
                         <tr>
                             <th>Objetivos Sectoriales</th>
@@ -825,13 +882,13 @@
             </div>
         </section>
         
-        <!-- Objetivos y Estrategias -->
-        <section id="strategies" class="section">
+        <!-- 6. OEI Estrategias (antes: Objetivos y Estrategias) -->
+        <section id="oei-strategies" class="section">
             <div class="section-header">
                 <div class="section-icon">
                     <i class="fas fa-chess-board"></i>
                 </div>
-                <h2 class="section-title">Objetivos Estratégicos y Estrategias</h2>
+                <h2 class="section-title">OEI Estrategias</h2>
             </div>
             
             <p>Matriz de objetivos estratégicos, estrategias y acciones estratégicas para el período 2025-2029:</p>
@@ -923,7 +980,7 @@
             </div>
         </section>
         
-        <!-- Objetivos e Indicadores Vigentes (Nueva Sección) -->
+        <!-- 7. Indicadores Vigentes -->
         <section id="current-indicators" class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -999,7 +1056,45 @@
             </div>
         </section>
         
-        <!-- Indicadores Sectoriales -->
+        <!-- 8. Elementos orientadores vigentes (Nueva Sección) -->
+        <section id="orientadores-vigentes" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <h2 class="section-title">Elementos Orientadores Vigentes</h2>
+            </div>
+            
+            <p>Misión, visión y valores corporativos de la Empresa Pública de Vivienda y Desarrollo Urbano EP:</p>
+            
+            <div class="orientadores-card">
+                <h3><i class="fas fa-flag"></i> 4.1. Misión</h3>
+                <p>Somos una empresa pública que elabora e implementa programas, planes y proyectos de vivienda y desarrollo urbano integral, mediante la gestión eficientes de procesos que generen un permanente margen de rentabilidad, innovación y la diversificación de servicios, en aras de contribuir a la mejora de hábitat y al bienestar social del Ecuador.</p>
+            </div>
+            
+            <div class="orientadores-card">
+                <h3><i class="fas fa-eye"></i> 4.2. Visión</h3>
+                <p>Al 2025 ser la empresa pública referente en el sector de la construcción de vivienda y desarrollo urbano, reconocida por la eficiente gestión de recursos, la calidad de sus proyectos, la innovación en la construcción, y su compromiso con el desarrollo social del país.</p>
+            </div>
+            
+            <div class="orientadores-card">
+                <h3><i class="fas fa-handshake"></i> 4.3. Valores Corporativos</h3>
+                <ul class="values-list">
+                    <li><strong>Respeto:</strong> nivel de aceptación que cada servidor debe tener de las diferentes formas de sentir, pensar y actuar de cada una de las personas que forman parte de la Empresa.</li>
+                    <li><strong>Lealtad:</strong> conocer, asumir, promulgar y defender los valores, principios y objetivos de la Empresa como propios, garantizando los derechos individuales y colectivos.</li>
+                    <li><strong>Responsabilidad:</strong> cumplimento de las tareas encomendadas, con el manejo eficiente de recursos, sin afectar a los demás y en función de los objetivos Empresariales y nacionales, garantizando la protección con el ambiente y contribuyendo activamente al mejoramiento social, económico y ambiental.</li>
+                    <li><strong>Integridad:</strong> la servidora o servidor público de la VDUEP, responderá por sus actos y decisiones, siendo coherente entre lo que piensa, dice y hace. Trabajar honestamente y a tiempo, no dar oportunidad para prácticas corruptas de cualquier naturaleza.</li>
+                    <li><strong>Excelencia:</strong> camino hacia el éxito Empresarial y personal, buscando permanentemente perfeccionar los procesos internos, ejecutando el trabajo con efectividad evitando situaciones que lleven a errores o atrasos en la prestación del servicio con la finalidad de superar las expectativas internas y externas de nuestros usuarios.</li>
+                    <li><strong>Solidaridad:</strong> acto de interesarse y responder a las necesidades de los demás.</li>
+                </ul>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Nota:</strong> Estos elementos orientadores constituyen el marco filosófico y ético que guía la gestión institucional de la Empresa Pública de Vivienda y Desarrollo Urbano EP.</p>
+            </div>
+        </section>
+        
+        <!-- Indicadores Sectoriales (se mantiene) -->
         <section id="indicators" class="section">
             <div class="section-header">
                 <div class="section-icon">
