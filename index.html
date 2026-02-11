@@ -324,6 +324,59 @@
             background-color: rgba(243, 156, 18, 0.1) !important;
         }
         
+        /* Estilo para tabla de objetivos e indicadores vigentes */
+        .current-indicators-table th:nth-child(1) { width: 25%; }
+        .current-indicators-table th:nth-child(2) { width: 20%; }
+        .current-indicators-table th:nth-child(3) { width: 25%; }
+        .current-indicators-table th:nth-child(4) { width: 15%; }
+        .current-indicators-table th:nth-child(5) { width: 15%; }
+        
+        .current-objective-row {
+            background-color: rgba(26, 60, 139, 0.15) !important;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .current-indicator-row {
+            background-color: rgba(26, 60, 139, 0.05) !important;
+        }
+        
+        .meta-highlight {
+            background-color: rgba(46, 204, 113, 0.15) !important;
+            font-weight: 600;
+            color: var(--success-color);
+        }
+        
+        .empty-cell {
+            color: #999;
+            font-style: italic;
+        }
+        
+        /* Estilos para tabla de objetivos y estrategias */
+        .strategies-table th:nth-child(1) { width: 25%; }
+        .strategies-table th:nth-child(2) { width: 25%; }
+        .strategies-table th:nth-child(3) { width: 50%; }
+        
+        .objective-row-strategies {
+            background-color: rgba(26, 60, 139, 0.15) !important;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .strategy-row {
+            background-color: rgba(26, 60, 139, 0.08) !important;
+        }
+        
+        .action-row {
+            background-color: rgba(26, 60, 139, 0.03) !important;
+        }
+        
+        .action-bullet {
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
         /* Nuevo estilo para tabla de objetivos sectoriales */
         .objectives-table th:nth-child(1) { width: 40%; }
         .objectives-table th:nth-child(2) { width: 30%; }
@@ -337,6 +390,26 @@
         
         .indicator-row {
             background-color: rgba(26, 60, 139, 0.05) !important;
+        }
+        
+        /* Estilo para tabla de objetivos sectoriales y estratégicos */
+        .strategic-objectives-table th:nth-child(1) { width: 50%; }
+        .strategic-objectives-table th:nth-child(2) { width: 50%; }
+        
+        .sectorial-objective-row {
+            background-color: rgba(46, 204, 113, 0.1) !important;
+        }
+        
+        .strategic-objective-row {
+            background-color: rgba(52, 152, 219, 0.1) !important;
+        }
+        
+        .objective-label {
+            display: inline-block;
+            width: 25px;
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--primary-color);
         }
         
         /* Specific table styles */
@@ -435,6 +508,17 @@
             .methodology-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .strategies-table th:nth-child(1),
+            .strategies-table th:nth-child(2),
+            .strategies-table th:nth-child(3),
+            .current-indicators-table th:nth-child(1),
+            .current-indicators-table th:nth-child(2),
+            .current-indicators-table th:nth-child(3),
+            .current-indicators-table th:nth-child(4),
+            .current-indicators-table th:nth-child(5) {
+                width: auto;
+            }
         }
     </style>
 </head>
@@ -458,6 +542,9 @@
             <button class="nav-btn active" data-target="methodology">Metodología PEI</button>
             <button class="nav-btn" data-target="pnd">Plan Desarrollo</button>
             <button class="nav-btn" data-target="objectives">Objetivos Sectoriales</button>
+            <button class="nav-btn" data-target="strategic-objectives">Objetivos Estratégicos</button>
+            <button class="nav-btn" data-target="strategies">Objetivos y Estrategias</button>
+            <button class="nav-btn" data-target="current-indicators">Indicadores Vigentes</button>
             <button class="nav-btn" data-target="indicators">Indicadores Sectoriales</button>
             <button class="nav-btn" data-target="budget">Presupuesto Sectorial</button>
             <button class="nav-btn" data-target="foda-externo">FODA Externo</button>
@@ -612,7 +699,7 @@
             </div>
         </section>
         
-        <!-- Objetivos Sectoriales (Nueva Sección) -->
+        <!-- Objetivos Sectoriales -->
         <section id="objectives" class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -674,6 +761,241 @@
             
             <div class="section-info">
                 <p><strong>Nota:</strong> Esta tabla presenta de forma resumida los objetivos sectoriales, sus indicadores y las metas establecidas para el período 2025-2029. Para información detallada sobre los valores anuales y acumulados, consulte la sección "Indicadores Sectoriales".</p>
+            </div>
+        </section>
+        
+        <!-- Objetivos Sectoriales y Estratégicos Vigentes -->
+        <section id="strategic-objectives" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-crosshairs"></i>
+                </div>
+                <h2 class="section-title">Objetivos Sectoriales y Estratégicos Vigentes</h2>
+            </div>
+            
+            <p>Relación entre los objetivos sectoriales y los objetivos estratégicos vigentes de la Empresa Pública de Vivienda y Desarrollo Urbano EP:</p>
+            
+            <div class="table-container">
+                <table class="strategic-objectives-table">
+                    <thead>
+                        <tr>
+                            <th>Objetivos Sectoriales</th>
+                            <th>Objetivos Estratégicos Vigentes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="sectorial-objective-row">
+                            <td>
+                                <span class="objective-label">a.</span> Objetivo Sectorial 1: Ampliar y diversificar el acceso a soluciones habitacionales, nuevas o recuperables, mediante asistencia técnica, financiamiento y acompañamiento a los beneficiarios.
+                            </td>
+                            <td>
+                                <span class="objective-label">1.</span> Incrementar la sostenibilidad financiera de la empresa.
+                            </td>
+                        </tr>
+                        <tr class="strategic-objective-row">
+                            <td>
+                                <span class="objective-label">b.</span> Objetivo Sectorial 2: Legalizar tierras rurales estatales y adjudicar títulos de propiedad de vivienda de interés social en proyectos ejecutados, para formalizar el acceso a la vivienda.
+                            </td>
+                            <td>
+                                <span class="objective-label">2.</span> Reducir el déficit habitacional en el territorio ecuatoriano.
+                            </td>
+                        </tr>
+                        <tr class="sectorial-objective-row">
+                            <td>
+                                <span class="objective-label">c.</span> Objetivo Sectorial 3: Fortalecer la gestión integral del hábitat mediante intervenciones territoriales sostenibles e inclusivas que articulen el espacio público y equipamientos, promoviendo la resiliencia urbana.
+                            </td>
+                            <td>
+                                <span class="objective-label">3.</span> Incrementar modelos asociativos de programas o proyectos de vivienda y desarrollo urbano con actores públicos y privados.
+                            </td>
+                        </tr>
+                        <tr class="strategic-objective-row">
+                            <td>
+                                <!-- Celda vacía para el cuarto objetivo estratégico -->
+                            </td>
+                            <td>
+                                <span class="objective-label">4.</span> Fortalecer las capacidades institucionales.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Análisis:</strong> Esta matriz establece la relación entre los objetivos sectoriales y los objetivos estratégicos institucionales vigentes. Muestra cómo los objetivos sectoriales se alinean con las prioridades estratégicas de la institución, permitiendo una gestión coherente y enfocada en resultados.</p>
+            </div>
+        </section>
+        
+        <!-- Objetivos y Estrategias -->
+        <section id="strategies" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-chess-board"></i>
+                </div>
+                <h2 class="section-title">Objetivos Estratégicos y Estrategias</h2>
+            </div>
+            
+            <p>Matriz de objetivos estratégicos, estrategias y acciones estratégicas para el período 2025-2029:</p>
+            
+            <div class="table-container">
+                <table class="strategies-table">
+                    <thead>
+                        <tr>
+                            <th>Objetivos Estratégicos</th>
+                            <th>Estrategias</th>
+                            <th>Acciones Estratégicas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Objetivo 1 -->
+                        <tr class="objective-row-strategies">
+                            <td rowspan="7">1. Incrementar la sostenibilidad financiera de la empresa.</td>
+                            <td rowspan="1">1.1. Rentabilizar los convenios con las entidades</td>
+                            <td>Hacer la gestión con las autoridades para la definición del margen de utilidad operativa</td>
+                        </tr>
+                        <tr class="strategy-row">
+                            <td rowspan="4">1.2. Incrementar las ventas de los bienes de la empresa</td>
+                            <td><span class="action-bullet">•</span> Desarrollar modelos de promoción</td>
+                        </tr>
+                        <tr class="action-row">
+                            <td><span class="action-bullet">•</span> Desarrollar nuevos modelos de gestión de alianzas y negocios.</td>
+                        </tr>
+                        <tr class="action-row">
+                            <td><span class="action-bullet">•</span> Elaboración de un diagnóstico situacional sobre los bienes de la empresa, que permita la mitigación de los riesgos sobre los mismos.</td>
+                        </tr>
+                        <tr class="action-row">
+                            <td><span class="action-bullet">•</span> Valorar a costo de oportunidad los bienes a comercializar de la empresa.</td>
+                        </tr>
+                        <tr class="strategy-row">
+                            <td rowspan="1">1.3. Incrementar los servicios especializados</td>
+                            <td>Realizar un estudio de mercado para conocer las necesidades insatisfechas y ofertar servicios sobre los hallazgos.</td>
+                        </tr>
+                        <tr class="strategy-row">
+                            <td rowspan="1">1.4. Incrementar servicios de equipamiento urbano</td>
+                            <td>Realizar un estudio de mercado para conocer las necesidades insatisfechas y ofertar servicios sobre los hallazgos.</td>
+                        </tr>
+                        
+                        <!-- Objetivo 2 -->
+                        <tr class="objective-row-strategies">
+                            <td rowspan="2">2. Reducir el déficit habitacional en el territorio ecuatoriano.</td>
+                            <td rowspan="2">2.1. Desarrollar nuevos modelos de gestión técnica de proyectos.</td>
+                            <td><span class="action-bullet">•</span> Conformar un comité (multidisciplinario) de evaluación de cumplimiento de los convenios.</td>
+                        </tr>
+                        <tr class="action-row">
+                            <td><span class="action-bullet">•</span> Actualizar la documentación relativa a los marcos de referencia para el establecimiento de los convenios y los proyectos derivados de estos.</td>
+                        </tr>
+                        
+                        <!-- Objetivo 3 -->
+                        <tr class="objective-row-strategies">
+                            <td rowspan="3">3. Incrementar modelos asociativos de programas o proyectos de vivienda y desarrollo urbano con actores públicos y privados</td>
+                            <td rowspan="3">3.1. Identificar y establecer alianzas con aliados públicos y privados, nacionales o internacionales para ejecutar programas o proyectos soluciones problemáticas sociales en materia de hábitat y desarrollo urbano y al mismo tiempo genere ingresos operacionales para la empresa.</td>
+                            <td><span class="action-bullet">•</span> Actualizar Reglamento de Asociatividad</td>
+                        </tr>
+                        <tr class="action-row">
+                            <td><span class="action-bullet">•</span> Identificar y generar acercamientos con posibles aliados estratégicos presentando una propuesta de valor</td>
+                        </tr>
+                        <tr class="action-row">
+                            <td><span class="action-bullet">•</span> Actualizar permanentemente el portafolio de anteproyectos inmobiliarios y de infraestructura urbana a nivel nacional.</td>
+                        </tr>
+                        
+                        <!-- Objetivo 4 -->
+                        <tr class="objective-row-strategies">
+                            <td rowspan="4">4. Fortalecer las capacidades institucionales.</td>
+                            <td rowspan="1">4.1. Vincular la ejecución presupuestaria con la programática asegurando una adecuada ejecución presupuestaria y el uso de los recursos</td>
+                            <td>Establecer un sistema uniforme de medición financiera que incluya la comparación detallada entre presupuestos y gastos reales.</td>
+                        </tr>
+                        <tr class="strategy-row">
+                            <td rowspan="1">4.2. Diseñar un Plan de Capacitación del personal para incrementar las capacidades de las personas en pro de mejorar la gestión institucional.</td>
+                            <td>Cerrar las brechas de capacitación en función de las evaluaciones de desempeños aplicadas previamente</td>
+                        </tr>
+                        <tr class="strategy-row">
+                            <td rowspan="2">4.3. Implementar sistemas de gestión de la empresa.</td>
+                            <td><span class="action-bullet">•</span> Implementar acciones estructuradas para la mejora e innovación de sus procesos, y calidad a fin de fortalecer la gestión de las unidades agregadores de valor.</td>
+                        </tr>
+                        <tr class="action-row">
+                            <td><span class="action-bullet">•</span> Evaluar y mejorar los procesos priorizados</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Nota:</strong> Esta matriz detalla los objetivos estratégicos de la Empresa Pública de Vivienda y Desarrollo Urbano EP, sus respectivas estrategias y las acciones específicas para su implementación durante el período 2025-2029.</p>
+            </div>
+        </section>
+        
+        <!-- Objetivos e Indicadores Vigentes (Nueva Sección) -->
+        <section id="current-indicators" class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2 class="section-title">Objetivos e Indicadores Vigentes</h2>
+            </div>
+            
+            <p>Indicadores vigentes para los objetivos estratégicos con línea base del año 2023 y metas establecidas para el período 2024-2025:</p>
+            
+            <div class="table-container">
+                <table class="current-indicators-table">
+                    <thead>
+                        <tr>
+                            <th>Objetivos estratégicos</th>
+                            <th>Indicador</th>
+                            <th>Fórmula Indicador</th>
+                            <th>Línea base año 2023</th>
+                            <th>Meta 2024-2025</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Objetivo 1 -->
+                        <tr class="current-objective-row">
+                            <td rowspan="4">1. Incrementar la sostenibilidad financiera de la empresa</td>
+                            <td>Margen Operacional (MO)*</td>
+                            <td>% de margen operativo</td>
+                            <td class="empty-cell">-</td>
+                            <td class="meta-highlight">8,50%</td>
+                        </tr>
+                        <tr class="current-indicator-row">
+                            <td>Venta de bienes</td>
+                            <td>Sumatoria de ingreso por bienes inmuebles comercializados</td>
+                            <td>631.904,11</td>
+                            <td class="meta-highlight">8.532.317,95</td>
+                        </tr>
+                        <tr class="current-indicator-row">
+                            <td>Ingresos operaciones por servicios especializados</td>
+                            <td>Sumatoria del monto de contratos o convenios de prestación de servicios especializados</td>
+                            <td class="empty-cell">-</td>
+                            <td class="meta-highlight">200.000,00</td>
+                        </tr>
+                        <tr class="current-indicator-row">
+                            <td>Ingresos por rubro de gestión y planificación equipamiento urbano</td>
+                            <td>Sumatoria de ingresos por concepto de rubro de gestión y planificación en equipamiento urbano complementario</td>
+                            <td class="empty-cell">-</td>
+                            <td class="meta-highlight">331.836,50</td>
+                        </tr>
+                        
+                        <!-- Objetivo 2 -->
+                        <tr class="current-objective-row">
+                            <td rowspan="1">2. Reducir el déficit habitacional en el territorio ecuatoriano</td>
+                            <td>Número de viviendas nuevas entregadas</td>
+                            <td>Total de viviendas nuevas entregadas</td>
+                            <td class="empty-cell">-</td>
+                            <td class="meta-highlight">3.837</td>
+                        </tr>
+                        
+                        <!-- Objetivo 3 -->
+                        <tr class="current-objective-row">
+                            <td rowspan="1">3. Incrementar modelos asociativos de programas o proyectos de vivienda y desarrollo urbano con actores públicos y privados</td>
+                            <td>Ingresos por rubros de instrumentos de asociatividad suscritos con actores públicos o privados</td>
+                            <td>Sumatoria de dividendos generados por nuevos Contrato de Alianza Estratégica</td>
+                            <td class="empty-cell">-</td>
+                            <td class="meta-highlight">630.938,85</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section-info">
+                <p><strong>Nota:</strong> *El Margen Operacional (MO) se calcula como (Ingresos Operacionales - Costos Operacionales) / Ingresos Operacionales × 100%. Los valores monetarios están expresados en dólares estadounidenses ($).</p>
             </div>
         </section>
         
@@ -1256,7 +1578,12 @@
             const tableRows = document.querySelectorAll('table tbody tr');
             tableRows.forEach(row => {
                 row.addEventListener('mouseenter', function() {
-                    if (!this.classList.contains('objective-row') && !this.classList.contains('objective-header-row')) {
+                    if (!this.classList.contains('objective-row') && 
+                        !this.classList.contains('objective-header-row') &&
+                        !this.classList.contains('sectorial-objective-row') &&
+                        !this.classList.contains('strategic-objective-row') &&
+                        !this.classList.contains('objective-row-strategies') &&
+                        !this.classList.contains('current-objective-row')) {
                         this.style.backgroundColor = '#f1f5fd';
                     }
                 });
@@ -1264,11 +1591,19 @@
                 row.addEventListener('mouseleave', function() {
                     if (!this.classList.contains('objective-row') && 
                         !this.classList.contains('objective-header-row') && 
+                        !this.classList.contains('sectorial-objective-row') &&
+                        !this.classList.contains('strategic-objective-row') &&
+                        !this.classList.contains('objective-row-strategies') &&
+                        !this.classList.contains('current-objective-row') &&
+                        !this.classList.contains('strategy-row') &&
+                        !this.classList.contains('action-row') &&
+                        !this.classList.contains('current-indicator-row') &&
                         !this.classList.contains('indicator-subrow') && 
                         !this.classList.contains('indicator-row') &&
                         !this.classList.contains('highlight') &&
                         !this.classList.contains('success-cell') &&
-                        !this.classList.contains('warning-cell')) {
+                        !this.classList.contains('warning-cell') &&
+                        !this.classList.contains('meta-highlight')) {
                         
                         // Restaurar colores alternados
                         const rowIndex = Array.from(this.parentNode.children).indexOf(this);
