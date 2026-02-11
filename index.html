@@ -527,6 +527,95 @@
             background-color: rgba(26, 60, 139, 0.05) !important;
         }
         
+        /* Estilos para observaciones con localStorage */
+        .observaciones-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--info-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 30px 0 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        
+        .observaciones-title {
+            display: flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .observaciones-title i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        .observaciones-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .observaciones-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .observaciones-input:focus {
+            outline: none;
+            border-color: var(--info-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .observaciones-btn {
+            background-color: var(--info-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 0 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .observaciones-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .observaciones-btn i {
+            font-size: 0.9rem;
+        }
+        
+        .observaciones-resultado {
+            background-color: white;
+            border: 1px solid #e9ecef;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            min-height: 50px;
+            font-size: 0.95rem;
+            color: var(--dark-color);
+        }
+        
+        .observaciones-resultado i {
+            color: var(--info-color);
+            margin-right: 8px;
+        }
+        
+        .empty-observacion {
+            color: #adb5bd;
+            font-style: italic;
+        }
+        
         footer {
             text-align: center;
             margin-top: 40px;
@@ -592,6 +681,15 @@
             .current-indicators-table th:nth-child(4),
             .current-indicators-table th:nth-child(5) {
                 width: auto;
+            }
+            
+            .observaciones-input-group {
+                flex-direction: column;
+            }
+            
+            .observaciones-btn {
+                padding: 12px;
+                justify-content: center;
             }
         }
     </style>
@@ -732,6 +830,26 @@
                 <h3 style="color: var(--primary-color); margin-bottom: 10px;"><i class="fas fa-lightbulb"></i> Proceso de Elaboración</h3>
                 <p>El PEI se formula a través de un proceso participativo que incluye talleres de trabajo, análisis técnico y validación institucional, asegurando que los elementos estratégicos respondan a las necesidades reales del sector vivienda y desarrollo urbano, y estén alineados con las políticas nacionales.</p>
             </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN 1 -->
+            <div class="observaciones-box" id="obs-section-1">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Metodología PEI
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section1" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section1')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section1" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section1" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
+            </div>
             
             <div class="section-footer">
                 <i class="fas fa-check-circle"></i> Fin de la sección 1. Metodología del Plan Estratégico Institucional.
@@ -770,6 +888,26 @@
             
             <div class="section-info">
                 <p><strong>Nota:</strong> Esta matriz establece la alineación del plan sectorial con el Plan Nacional de Desarrollo (PND), identificando el eje, objetivo, política y meta correspondiente.</p>
+            </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN 2 -->
+            <div class="observaciones-box" id="obs-section-2">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Plan Desarrollo
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section2" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section2')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section2" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section2" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
             </div>
             
             <div class="section-footer">
@@ -836,6 +974,26 @@
             
             <div class="section-info">
                 <p><strong>Nota:</strong> Esta tabla presenta de forma resumida los objetivos sectoriales, sus indicadores y las metas establecidas para el período 2025-2029. Para información detallada sobre los valores anuales y acumulados, consulte la sección "Indicadores Sectoriales".</p>
+            </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN 3 -->
+            <div class="observaciones-box" id="obs-section-3">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Objetivos Sectoriales
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section3" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section3')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section3" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section3" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
             </div>
             
             <div class="section-footer">
@@ -968,6 +1126,26 @@
             
             <div class="section-info" style="margin-top: 30px;">
                 <p><strong>Análisis:</strong> Esta matriz establece la relación entre los objetivos sectoriales y los objetivos estratégicos institucionales vigentes. Muestra cómo los objetivos sectoriales se alinean con las prioridades estratégicas de la institución, permitiendo una gestión coherente y enfocada en resultados.</p>
+            </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN 4 -->
+            <div class="observaciones-box" id="obs-section-4">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Objetivos Sectoriales vs OEI
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section4" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section4')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section4" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section4" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
             </div>
             
             <div class="section-footer">
@@ -1124,6 +1302,26 @@
             <div class="section-info">
                 <p><strong>Nota:</strong> Esta matriz detalla los objetivos estratégicos de la Empresa Pública de Vivienda y Desarrollo Urbano EP, sus respectivas estrategias y las acciones específicas para su implementación durante el período 2025-2029.</p>
             </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN 6 -->
+            <div class="observaciones-box" id="obs-section-6">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - OEI Estrategias
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section6" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section6')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section6" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section6" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
+            </div>
             
             <div class="section-footer">
                 <i class="fas fa-check-circle"></i> Fin de la sección 6. OEI Estrategias.
@@ -1201,6 +1399,26 @@
             <div class="section-info">
                 <p><strong>Nota:</strong> *El Margen Operacional (MO) se calcula como (Ingresos Operacionales - Costos Operacionales) / Ingresos Operacionales × 100%. Los valores monetarios están expresados en dólares estadounidenses ($).</p>
             </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN 7 -->
+            <div class="observaciones-box" id="obs-section-7">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Indicadores Vigentes
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section7" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section7')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section7" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section7" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
+            </div>
             
             <div class="section-footer">
                 <i class="fas fa-check-circle"></i> Fin de la sección 7. Objetivos e Indicadores Vigentes.
@@ -1243,13 +1461,33 @@
             <div class="section-info">
                 <p><strong>Nota:</strong> Estos elementos orientadores constituyen el marco filosófico y ético que guía la gestión institucional de la Empresa Pública de Vivienda y Desarrollo Urbano EP.</p>
             </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN 8 -->
+            <div class="observaciones-box" id="obs-section-8">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Elementos Orientadores
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section8" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section8')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section8" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section8" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
+            </div>
             
             <div class="section-footer">
                 <i class="fas fa-check-circle"></i> Fin de la sección 8. Elementos Orientadores Vigentes.
             </div>
         </section>
         
-        <!-- Secciones adicionales (sin numeración en el encabezado pero con footer) -->
+        <!-- Secciones adicionales (sin numeración en el encabezado pero con footer y observaciones) -->
         <section id="indicators" class="section">
             <div class="section-header">
                 <div class="section-icon">
@@ -1258,9 +1496,28 @@
                 <h2 class="section-title">Indicadores Sectoriales</h2>
             </div>
             
-            <!-- Contenido de Indicadores Sectoriales (se omite por brevedad, se mantiene igual) -->
             <div class="section-info">
                 <p><strong>Nota:</strong> Esta sección contiene los indicadores sectoriales detallados con sus metas anuales y acumuladas para el período 2025-2029.</p>
+            </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN INDICADORES SECTORIALES -->
+            <div class="observaciones-box" id="obs-section-indicators">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Indicadores Sectoriales
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section-indicators" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section-indicators')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section-indicators" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section-indicators" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
             </div>
             
             <div class="section-footer">
@@ -1276,9 +1533,28 @@
                 <h2 class="section-title">Presupuesto Sectorial</h2>
             </div>
             
-            <!-- Contenido de Presupuesto Sectorial (se omite por brevedad, se mantiene igual) -->
             <div class="section-info">
                 <p><strong>Nota:</strong> Esta sección presenta la estimación del presupuesto referencial para la ejecución del plan estratégico 2025-2029.</p>
+            </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN PRESUPUESTO -->
+            <div class="observaciones-box" id="obs-section-budget">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - Presupuesto Sectorial
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section-budget" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section-budget')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section-budget" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section-budget" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
             </div>
             
             <div class="section-footer">
@@ -1294,9 +1570,28 @@
                 <h2 class="section-title">Análisis FODA Externo</h2>
             </div>
             
-            <!-- Contenido de FODA Externo (se omite por brevedad, se mantiene igual) -->
             <div class="section-info">
                 <p><strong>Análisis:</strong> El FODA externo identifica principalmente oportunidades en los ámbitos político, legal y sociocultural.</p>
+            </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN FODA EXTERNO -->
+            <div class="observaciones-box" id="obs-section-foda-externo">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - FODA Externo
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section-foda-externo" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section-foda-externo')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section-foda-externo" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section-foda-externo" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
             </div>
             
             <div class="section-footer">
@@ -1312,9 +1607,28 @@
                 <h2 class="section-title">Análisis FODA Interno</h2>
             </div>
             
-            <!-- Contenido de FODA Interno (se omite por brevedad, se mantiene igual) -->
             <div class="section-info">
                 <p><strong>Análisis:</strong> El FODA interno identifica debilidades significativas en tecnología, estructura organizacional y procesos.</p>
+            </div>
+
+            <!-- OBSERVACIONES LOCALSTORAGE - SECCIÓN FODA INTERNO -->
+            <div class="observaciones-box" id="obs-section-foda-interno">
+                <div class="observaciones-title">
+                    <i class="fas fa-pen"></i> Observaciones - FODA Interno
+                </div>
+                <div class="observaciones-input-group">
+                    <input type="text" id="texto-section-foda-interno" class="observaciones-input" placeholder="Escribe tus observaciones o comentarios sobre esta sección...">
+                    <button onclick="guardarObservacion('section-foda-interno')" class="observaciones-btn">
+                        <i class="fas fa-save"></i> Guardar
+                    </button>
+                </div>
+                <h3 style="font-size: 1rem; color: var(--dark-color); margin-bottom: 8px; display: flex; align-items: center;">
+                    <i class="fas fa-history" style="margin-right: 8px; color: var(--info-color);"></i> Última observación guardada:
+                </h3>
+                <div id="resultado-section-foda-interno" class="observaciones-resultado">
+                    <i class="fas fa-comment"></i> 
+                    <span id="texto-guardado-section-foda-interno" class="empty-observacion">No hay observaciones guardadas</span>
+                </div>
             </div>
             
             <div class="section-footer">
@@ -1332,7 +1646,54 @@
     </footer>
     
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // FUNCIÓN GENÉRICA PARA GUARDAR OBSERVACIONES EN LOCALSTORAGE
+        function guardarObservacion(sectionId) {
+            let texto = document.getElementById("texto-" + sectionId).value;
+            
+            if (texto.trim() === "") {
+                alert("Por favor, escribe una observación antes de guardar.");
+                return;
+            }
+            
+            localStorage.setItem("obs_" + sectionId, texto);
+            document.getElementById("texto-guardado-" + sectionId).innerText = texto;
+            document.getElementById("texto-guardado-" + sectionId).classList.remove("empty-observacion");
+            
+            // Limpiar campo de texto después de guardar
+            document.getElementById("texto-" + sectionId).value = "";
+        }
+
+        // FUNCIÓN PARA CARGAR TODAS LAS OBSERVACIONES GUARDADAS
+        function cargarTodasLasObservaciones() {
+            // Secciones numeradas
+            const secciones = [
+                'section1', 'section2', 'section3', 'section4', 
+                'section6', 'section7', 'section8',
+                'section-indicators', 'section-budget', 
+                'section-foda-externo', 'section-foda-interno'
+            ];
+            
+            secciones.forEach(function(sectionId) {
+                let guardado = localStorage.getItem("obs_" + sectionId);
+                let elementoTexto = document.getElementById("texto-guardado-" + sectionId);
+                
+                if (elementoTexto) {
+                    if (guardado) {
+                        elementoTexto.innerText = guardado;
+                        elementoTexto.classList.remove("empty-observacion");
+                    } else {
+                        elementoTexto.innerText = "No hay observaciones guardadas";
+                        elementoTexto.classList.add("empty-observacion");
+                    }
+                }
+            });
+        }
+
+        // Cargar todas las observaciones cuando la página se carga
+        window.onload = function() {
+            cargarTodasLasObservaciones();
+            
+            // Navegación entre secciones
             const navButtons = document.querySelectorAll('.nav-btn');
             const sections = document.querySelectorAll('.section');
             
@@ -1348,6 +1709,7 @@
                 });
             });
             
+            // Efectos hover en tablas
             const tableRows = document.querySelectorAll('table tbody tr');
             tableRows.forEach(row => {
                 row.addEventListener('mouseenter', function() {
@@ -1383,7 +1745,7 @@
                     }
                 });
             });
-        });
+        };
     </script>
 </body>
 </html>
